@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">ZCSFnativeApp</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <style name="prompt">Select a place</style>
+
+    <string-array name="spinner_array">
+        <item name="select">Select a Option</item>
+        <item name="FA">Corridor A</item>
+        <item name="FB">Corridor B</item>
+        <item name="FCR">Control Room</item>
+        <item name="F127">Room 127</item>
+        <item name="GE">Experiments</item>
+        <item name="GSZ">School zone</item>
+    </string-array>
+</resources>
