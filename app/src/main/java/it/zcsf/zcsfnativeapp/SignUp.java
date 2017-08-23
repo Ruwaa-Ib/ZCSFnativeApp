@@ -48,7 +48,7 @@ public class SignUp extends Activity {
                     } catch (SQLException e) {
                         e.printStackTrace();
                     }
-                }
+                }//gk,hfkf
                 Intent i= new Intent(SignUp.this,MainActivity.class);
                 startActivity(i);
 
