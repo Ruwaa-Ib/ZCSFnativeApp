@@ -10,9 +10,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-/**
- * Created by new1 on 9/4/2017.
- */
 
 public class FirebaseClass {
     private final Context myContext;

@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "877287575058",
+    "firebase_url": "https://zcsfnativeapp.firebaseio.com",
+    "project_id": "zcsfnativeapp",
+    "storage_bucket": "zcsfnativeapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:877287575058:android:3d0715eed2f707ad",
+        "android_client_info": {
+          "package_name": "it.zcsf.zcsfnativeapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "877287575058-q733jv20ajggs4cagejaahui3njm33dn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "it.zcsf.zcsfnativeapp",
+            "certificate_hash": "d92245b7fccdf520a00daa8957c62f7007ec9703"
+          }
+        },
+        {
+          "client_id": "877287575058-r40djln35a2no5hsl6i73h7luns9mnh1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBT2qr1PPtYJu_fulCswBff0VI-5xmnW8s"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "877287575058-r40djln35a2no5hsl6i73h7luns9mnh1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
