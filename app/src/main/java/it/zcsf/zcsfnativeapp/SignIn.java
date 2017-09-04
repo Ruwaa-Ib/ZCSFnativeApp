@@ -16,12 +16,13 @@ import java.sql.SQLException;
 
 public class SignIn extends Activity {
 
-    Boolean e;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
+        final FirebaseClass auth=new FirebaseClass(SignIn.this);
         final EditText id=(EditText)findViewById(R.id.editText);
         final EditText pass=(EditText)findViewById(R.id.editText2);
         Button login=(Button)findViewById(R.id.button);
@@ -33,21 +34,9 @@ public class SignIn extends Activity {
             public void onClick(View view) {
                 String idd = id.getText().toString();
                 String Pass = pass.getText().toString();
-                Clients clients = new Clients(SignIn.this);
-                try {
-                    clients.open();
-                    e= clients.login(idd, Pass);
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-                Toast.makeText(SignIn.this,e.toString(),Toast.LENGTH_SHORT).show();
-                if (e) {
-                    Intent intent =new Intent(SignIn.this,MainActivity.class);
-                    String data=clients.getData(id.getText().toString());
-                    intent.putExtra("Data",data);
-                    clients.close();
-                    startActivity(intent);
-                }
+                auth.SignIn(idd,Pass,SignIn.this,MainActivity.class);
+
+
             }
         });
         signUp.setOnClickListener(new View.OnClickListener() {
