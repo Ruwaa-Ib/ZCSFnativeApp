@@ -13,92 +13,145 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="@dimen/activity_vertical_margin">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="Welcome, Please Fill Out The Following Fields"
-                android:id="@+id/textView"/>
+                android:text="Welcome!"
+                android:layout_gravity="center"
+                android:textSize="25dp"
+                android:textColor="@color/Froly"
+                android:typeface="serif"
+                android:id="@+id/welcome"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp"
+                android:text="Please sign up to continue"
+                android:textSize="20dp"
+                android:typeface="serif"/>
 
             <EditText
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
-                android:ems="10"
                 android:id="@+id/editText3"
-                android:layout_marginTop="20dp"
-                android:hint="Name" />
+                android:layout_marginTop="30dp"
+                android:hint="Your name (e.g. Ahmed Moustafa)"
+                android:textColorHint="@color/colorPrimary"
+                android:textSize="15dp"/>
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textEmailAddress"
-                android:ems="10"
                 android:id="@+id/editText4"
-                android:hint="E-mail"
-                android:layout_marginTop="20dp" />
+                android:hint="E-mail (e.g. someone@gmail.com)"
+                android:layout_marginTop="30dp"
+                android:textColorHint="@color/colorPrimary"
+                android:textSize="15dp"/>
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
-                android:ems="10"
                 android:id="@+id/editText5"
                 android:layout_below="@+id/editText4"
-                android:hint="Password"
-                android:layout_marginTop="20dp" />
+                android:hint="Password (must be 6 characters at least)"
+                android:layout_marginTop="30dp"
+                android:textColorHint="@color/colorPrimary"
+                android:textSize="15dp"/>
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
-                android:ems="10"
                 android:id="@+id/editText6"
-                android:hint="Confirm Password"
-                android:layout_marginTop="20dp" />
+                android:hint="Confirm Password (Re-enter the password)"
+                android:layout_marginTop="30dp"
+                android:textColorHint="@color/colorPrimary"
+                android:textSize="15dp"/>
 
             <RadioGroup
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:id="@+id/radioGroup"
                 android:layout_alignParentStart="true"
-                android:layout_marginTop="20dp">
+                android:layout_marginTop="50dp"
+                android:orientation="horizontal"
+                android:layout_gravity="center">
 
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="I have a ticket ID"
                     android:id="@+id/radioButton"
-                    android:checked="false" />
+                    android:checked="false"
+                    android:layout_gravity="start"
+                    android:textSize="20dp"
+                    android:layout_marginRight="@dimen/activity_vertical_margin"/>
 
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="I want to book a ticket"
+                    android:text="I want to buy a ticket"
                     android:id="@+id/radioButton2"
-                    android:checked="false" />
+                    android:checked="false"
+                    android:layout_gravity="end"
+                    android:layout_marginLeft="@dimen/activity_vertical_margin"
+                    android:textSize="20dp"/>
+
             </RadioGroup>
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="number"
-                android:ems="10"
                 android:id="@+id/editText7"
-                android:layout_below="@+id/radioGroup"
-                android:layout_marginTop="20dp"
-                android:hint="Ticket ID"
-                android:enabled="true" />
+                android:layout_marginTop="30dp"
+                android:hint="Ticket ID (#156796)"
+                android:enabled="true"
+                android:textColorHint="@color/colorPrimary"
+                android:textSize="15dp"/>
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Continue >>"
+                android:text="Sign up"
                 android:id="@+id/button3"
-                android:layout_gravity="end"/>
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:textSize="20dp"
+                android:background="@color/colorPrimary"
+                android:textAllCaps="false"
+                android:padding="@dimen/activity_horizontal_margin"
+                android:textColor="@color/BK"/>
 
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Already have an account?"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="Log in"
+                    android:textColor="@color/Froly"
+                    android:clickable="true"/>
+            </LinearLayout>
 
         </LinearLayout>
 

@@ -2,6 +2,7 @@ package it.zcsf.zcsfnativeapp;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -9,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.TextView;
 
 import java.sql.SQLException;
 import java.util.Objects;
@@ -35,6 +37,10 @@ public class SignUp extends Activity {
                 EditText passC=(EditText)findViewById(R.id.editText6);
                 EditText tid=(EditText)findViewById(R.id.editText7);
 
+                TextView welcome = (TextView) findViewById(R.id.welcome);
+                Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/HVD_Comic_Serif_Pro.otf");
+                welcome.setTypeface(typeface);
+
                 if (Objects.equals(pass.getText().toString(), passC.getText().toString())){
                     Clients clients=new Clients(SignUp.this);
                     String Name=name.getText().toString();
@@ -48,7 +54,7 @@ public class SignUp extends Activity {
                     } catch (SQLException e) {
                         e.printStackTrace();
                     }
-                }//gk,hfkf
+                }
                 Intent i= new Intent(SignUp.this,MainActivity.class);
                 startActivity(i);
 

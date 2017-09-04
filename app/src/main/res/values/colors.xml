@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#682257</color>
+    <color name="colorPrimary">#4C9995</color>
     <color name="colorPrimaryDark">#682257</color>
     <color name="colorAccent">#FF4081</color>
-    <color name="BK">#f7e3f5</color>
-    <color name="Gr">#3ffea1</color>
-    <color name="Gr2">#8dfcc6</color>
+    <color name="BK">#FBF7F7</color>
+    <color name="Froly">#F56374</color>
 </resources>
