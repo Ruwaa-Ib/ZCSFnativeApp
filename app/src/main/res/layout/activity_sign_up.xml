@@ -24,7 +24,6 @@
                 android:layout_gravity="center"
                 android:textSize="25dp"
                 android:textColor="@color/Froly"
-                android:typeface="serif"
                 android:id="@+id/welcome"/>
 
             <TextView
@@ -78,13 +77,11 @@
                 android:textSize="15dp"/>
 
             <RadioGroup
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/radioGroup"
-                android:layout_alignParentStart="true"
                 android:layout_marginTop="50dp"
-                android:orientation="horizontal"
-                android:layout_gravity="center">
+                android:orientation="horizontal">
 
                 <RadioButton
                     android:layout_width="wrap_content"
@@ -93,8 +90,7 @@
                     android:id="@+id/radioButton"
                     android:checked="false"
                     android:layout_gravity="start"
-                    android:textSize="20dp"
-                    android:layout_marginRight="@dimen/activity_vertical_margin"/>
+                    android:textSize="15sp"/>
 
                 <RadioButton
                     android:layout_width="wrap_content"
@@ -103,8 +99,7 @@
                     android:id="@+id/radioButton2"
                     android:checked="false"
                     android:layout_gravity="end"
-                    android:layout_marginLeft="@dimen/activity_vertical_margin"
-                    android:textSize="20dp"/>
+                    android:textSize="15sp"/>
 
             </RadioGroup>
 
@@ -142,7 +137,8 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Already have an account?"/>
+                    android:text="Already have an account?"
+                    android:textSize="16dp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -150,7 +146,9 @@
                     android:layout_marginLeft="10dp"
                     android:text="Log in"
                     android:textColor="@color/Froly"
-                    android:clickable="true"/>
+                    android:clickable="true"
+                    android:textSize="16dp"
+                    android:id="@+id/red_login"/>
             </LinearLayout>
 
         </LinearLayout>

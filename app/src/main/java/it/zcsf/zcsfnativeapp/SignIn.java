@@ -9,6 +9,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.sql.SQLException;
@@ -24,7 +25,8 @@ public class SignIn extends Activity {
         final EditText id=(EditText)findViewById(R.id.editText);
         final EditText pass=(EditText)findViewById(R.id.editText2);
         Button login=(Button)findViewById(R.id.button);
-        Button signUp=(Button)findViewById(R.id.button2);
+        //Button signUp=(Button)findViewById(R.id.button2);
+        TextView signUp = (TextView) findViewById(R.id.red_signup);
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override

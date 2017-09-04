@@ -14,48 +14,76 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:layout_margin="@dimen/activity_vertical_margin">
 
-            <ImageView
-                android:layout_width="match_parent"
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:scaleType="centerInside"
-                android:id="@+id/imageView"
-                android:src="@drawable/zcsf"/>
+                android:layout_gravity="center"
+                android:text="Welcome back!"
+                android:textColor="@color/Froly"
+                android:textSize="25sp"/>
+            
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="40dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Log in"
+                android:textSize="20sp"/>
+            
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="100dp" />
 
             <EditText
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:inputType="number"
-                android:ems="18"
                 android:id="@+id/editText"
-                android:hint="ID" />
+                android:hint="Ticket ID (#156796)" />
 
             <EditText
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
-                android:ems="18"
                 android:id="@+id/editText2"
-                android:hint="Password"
+                android:hint="Password (must be 6 characters at least)"
                 android:layout_marginTop="20dp" />
 
             <Button
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Login"
+                android:text="Log in"
                 android:id="@+id/button"
-                android:layout_gravity="end"
-                android:layout_marginTop="20dp" />
+                android:layout_gravity="center"
+                android:layout_marginTop="40dp"
+                android:background="@color/colorPrimary"
+                android:textColor="@color/BK"
+                android:textAllCaps="false"
+                android:textSize="20sp"
+                android:padding="16dp"/>
 
-            <Button
-                android:layout_width="fill_parent"
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:text="Do not have an account?"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="12dp"
                 android:text="Sign up"
-                android:id="@+id/button2"
-                android:layout_marginTop="20dp"/>
-
-
+                android:id="@+id/red_signup"
+                android:textColor="@color/Froly"
+                android:clickable="true"/>
         </LinearLayout>
     </ScrollView>
 
