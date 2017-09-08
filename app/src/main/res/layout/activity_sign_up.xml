@@ -35,46 +35,60 @@
                 android:textSize="20dp"
                 android:typeface="serif"/>
 
-            <EditText
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textPersonName"
-                android:id="@+id/editText3"
-                android:layout_marginTop="30dp"
-                android:hint="Your name (e.g. Ahmed Moustafa)"
-                android:textColorHint="@color/colorPrimary"
-                android:textSize="15dp"/>
-
-            <EditText
+            <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textEmailAddress"
-                android:id="@+id/editText4"
-                android:hint="E-mail (e.g. someone@gmail.com)"
-                android:layout_marginTop="30dp"
-                android:textColorHint="@color/colorPrimary"
-                android:textSize="15dp"/>
+                android:layout_height="wrap_content">
 
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textPassword"
-                android:id="@+id/editText5"
-                android:layout_below="@+id/editText4"
-                android:hint="Password (must be 6 characters at least)"
-                android:layout_marginTop="30dp"
-                android:textColorHint="@color/colorPrimary"
-                android:textSize="15dp"/>
+                <EditText
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    android:id="@+id/editText3"
+                    android:hint="Your name (e.g. Ahmed Moustafa)"
+                    android:textColorHint="@color/colorPrimary"
+                    android:textSize="15dp"/>
 
-            <EditText
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textPassword"
-                android:id="@+id/editText6"
-                android:hint="Confirm Password (Re-enter the password)"
-                android:layout_marginTop="30dp"
-                android:textColorHint="@color/colorPrimary"
-                android:textSize="15dp"/>
+                android:layout_height="wrap_content">
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textEmailAddress"
+                    android:id="@+id/editText4"
+                    android:hint="E-mail (e.g. someone@gmail.com)"
+                    android:textColorHint="@color/colorPrimary"
+                    android:textSize="15dp"/>
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword"
+                    android:id="@+id/editText5"
+                    android:layout_below="@+id/editText4"
+                    android:hint="Password (must be 6 characters at least)"
+                    android:textColorHint="@color/colorPrimary"
+                    android:textSize="15dp"/>
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword"
+                    android:id="@+id/editText6"
+                    android:hint="Confirm Password (Re-enter the password)"
+                    android:textColorHint="@color/colorPrimary"
+                    android:textSize="15dp"/>
+            </android.support.design.widget.TextInputLayout>
 
             <RadioGroup
                 android:layout_width="match_parent"
@@ -103,16 +117,21 @@
 
             </RadioGroup>
 
-            <EditText
+            <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="number"
-                android:id="@+id/editText7"
-                android:layout_marginTop="30dp"
-                android:hint="Ticket ID (#156796)"
-                android:enabled="true"
-                android:textColorHint="@color/colorPrimary"
-                android:textSize="15dp"/>
+                android:layout_height="wrap_content">
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:id="@+id/editText7"
+                    android:layout_marginTop="30dp"
+                    android:hint="Ticket ID (#156796)"
+                    android:enabled="true"
+                    android:textColorHint="@color/colorPrimary"
+                    android:textSize="15dp"/>
+
+            </android.support.design.widget.TextInputLayout>
 
             <Button
                 android:layout_width="wrap_content"
