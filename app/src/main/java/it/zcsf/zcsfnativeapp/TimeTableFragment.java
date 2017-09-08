@@ -1,22 +1,21 @@
 package it.zcsf.zcsfnativeapp;
 
 
-import android.app.Notification;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.NotificationCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.Toast;
+import android.widget.TableLayout;
+import android.widget.TableRow;
+import android.widget.TextView;
 
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class TimeTableFragment extends Fragment {
-
 
     public TimeTableFragment() {
         // Required empty public constructor
@@ -28,19 +27,49 @@ public class TimeTableFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view =  inflater.inflate(R.layout.fragment_time_table, container, false);
-       /* Button button = (Button) view.findViewById(R.id.btn1);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getActivity(),"Here comes the notification",Toast.LENGTH_SHORT).show();
+        String tid=getArguments().getString("tid");
+        String pass=getArguments().getString("pass");
+        FirebaseClass table=new FirebaseClass(getActivity());
 
-                NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(this)
-                        .setSmallIcon(R.drawable.ic_menu_share)
-                        .setContentTitle("Title of the noification")
-                        .setContentText("This is the txt of the notification")
-                        .build();
-            }
-        });  */
+        TableLayout tableLayout=(TableLayout)view.findViewById(R.id.table);
+
+        TableRow tableRow=new TableRow(getActivity());
+        tableRow.setLayoutParams(new TableRow.LayoutParams(
+                TableRow.LayoutParams.MATCH_PARENT,
+                TableRow.LayoutParams.WRAP_CONTENT));
+        tableRow.setPadding(20,10,20,10);
+
+        TextView title=new TextView(getActivity());
+        title.setText("Talk Title");
+        title.setTextColor(Color.MAGENTA);
+        title.setPadding(5,5,5,5);
+        title.setTextSize(16);
+        tableRow.addView(title);
+
+        TextView location=new TextView(getActivity());
+        location.setText("Location");
+        location.setTextColor(Color.MAGENTA);
+        location.setPadding(5,5,5,5);
+        location.setTextSize(16);
+        tableRow.addView(location);
+
+        TextView time=new TextView(getActivity());
+        time.setText("Time");
+        time.setTextColor(Color.MAGENTA);
+        time.setPadding(5,5,5,5);
+        time.setTextSize(16);
+        tableRow.addView(time);
+
+        tableRow.setPadding(5,5,5,5);
+
+        tableLayout.setStretchAllColumns (true);
+
+        tableLayout.addView(tableRow);
+
+
+
+        table.getInfo(tid,pass,"schedule",null,tableLayout);
+
         return view;
     }
 

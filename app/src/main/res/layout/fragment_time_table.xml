@@ -5,12 +5,28 @@
     tools:context="it.zcsf.zcsfnativeapp.TimeTableFragment">
 
     <!-- TODO: Update blank fragment layout -->
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="465dp"
+        android:layout_gravity="bottom">
+
+        <TableLayout
+            android:id="@+id/table"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></TableLayout>
+
+
+    </ScrollView>
+
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="This is the timetable fragment"
-        android:layout_gravity="center"
-        android:textSize="20dp"/>
+        android:text="Your Schedule"
+        android:textSize="40sp"
+        android:gravity="center"
+        />
 
 
 </FrameLayout>
