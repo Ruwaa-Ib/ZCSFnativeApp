@@ -32,9 +32,17 @@ public class SignIn extends Activity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String idd = id.getText().toString();
+                String tid = id.getText().toString();
                 String Pass = pass.getText().toString();
-                auth.SignIn(idd,Pass,SignIn.this,MainActivity.class);
+                if (!tid.matches("")&&!Pass.matches("")) {
+                    final FirebaseClass auth = new FirebaseClass(SignIn.this);
+                    Bundle bundle = new Bundle();
+                    bundle.putString("tid", tid);
+                    bundle.putString("pass", Pass);
+                    auth.SignIn(MainActivity.class, Pass, tid);
+                }else {
+                    Toast.makeText(SignIn.this,"Please, Don't Leave Any Blank Space!",Toast.LENGTH_SHORT).show();
+                }
 
 
             }

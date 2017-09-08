@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.TextView;
 
 import java.sql.SQLException;
 import java.util.Objects;
@@ -33,11 +34,23 @@ FirebaseClass auth=new FirebaseClass(SignUp.this);
                 EditText tid=(EditText)findViewById(R.id.editText7);
 
                 if (Objects.equals(pass.getText().toString(), passC.getText().toString())){
-                  auth.SignUP(email.getText().toString(),pass.getText().toString(),name.getText().toString()
-                  ,tid.getText().toString(),SignUp.this,MainActivity.class);
+                    Bundle bundle=new Bundle();
+                    bundle.putString("tid",tid.getText().toString());
+                    bundle.putString("pass",pass.getText().toString());
+                    auth.verifyTicket(email.getText().toString(),name.getText().toString(),pass.getText().toString(),
+                            tid.getText().toString(), MainActivity.class,bundle);
                 }
 
 
+            }
+        });
+
+        TextView redlogin = (TextView)findViewById(R.id.red_login);
+        redlogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SignUp.this, SignIn.class);
+                startActivity(intent);
             }
         });
 
