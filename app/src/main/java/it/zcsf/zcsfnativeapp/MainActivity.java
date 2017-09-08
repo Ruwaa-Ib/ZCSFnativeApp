@@ -1,9 +1,10 @@
 package it.zcsf.zcsfnativeapp;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -15,6 +16,9 @@ import android.view.MenuItem;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+
+    Bundle bundle;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,9 +26,12 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        bundle=getIntent().getExtras();
+
+
         //-----------------------------------------------------------------------------------//
         Fragment fragment = null;
-        Class fragmentClass = null;
+        Class fragmentClass;
         fragmentClass = HomeFragment.class;
         try {
             fragment = (Fragment) fragmentClass.newInstance();
@@ -86,7 +93,9 @@ public class MainActivity extends AppCompatActivity
             return true;
         }
 
-        if (id==R.id.action_sign_out){
+        if (id== R.id.action_sign_out){
+            Intent intent=new Intent(MainActivity.this,SignIn.class);
+            startActivity(intent);
             return true;
         }
 
@@ -104,6 +113,8 @@ public class MainActivity extends AppCompatActivity
             // Handle the camera action
             MyProfileFragment myProfileFragment = new MyProfileFragment();
             FragmentManager manager = getSupportFragmentManager();
+            bundle=getIntent().getExtras();
+            myProfileFragment.setArguments(bundle);
             manager.beginTransaction().replace(R.id.layout_for_fragment, myProfileFragment).addToBackStack("tag").commit();
 
         } else if (id == R.id.nav_home) {
@@ -112,7 +123,11 @@ public class MainActivity extends AppCompatActivity
             manager.beginTransaction().replace(R.id.layout_for_fragment, homeFragment).commit();
 
         } else if (id == R.id.nav_time_table) {
+
+
             TimeTableFragment timeTableFragment = new TimeTableFragment();
+            bundle=getIntent().getExtras();
+            timeTableFragment.setArguments(bundle);
             FragmentManager manager = getSupportFragmentManager();
             manager.beginTransaction().replace(R.id.layout_for_fragment, timeTableFragment).addToBackStack(null).commit();
 

@@ -22,7 +22,7 @@
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:text="Welcome!"
                 android:layout_gravity="center"
-                android:textSize="25dp"
+                android:textSize="25sp"
                 android:textColor="@color/Froly"
                 android:id="@+id/welcome"/>
 
@@ -32,7 +32,7 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="16dp"
                 android:text="Please sign up to continue"
-                android:textSize="20dp"
+                android:textSize="20sp"
                 android:typeface="serif"/>
 
             <android.support.design.widget.TextInputLayout
@@ -46,7 +46,7 @@
                     android:id="@+id/editText3"
                     android:hint="Your name (e.g. Ahmed Moustafa)"
                     android:textColorHint="@color/colorPrimary"
-                    android:textSize="15dp"/>
+                    android:textSize="15sp"/>
 
             </android.support.design.widget.TextInputLayout>
 
@@ -60,7 +60,7 @@
                     android:id="@+id/editText4"
                     android:hint="E-mail (e.g. someone@gmail.com)"
                     android:textColorHint="@color/colorPrimary"
-                    android:textSize="15dp"/>
+                    android:textSize="15sp"/>
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
@@ -74,7 +74,7 @@
                     android:layout_below="@+id/editText4"
                     android:hint="Password (must be 6 characters at least)"
                     android:textColorHint="@color/colorPrimary"
-                    android:textSize="15dp"/>
+                    android:textSize="15sp"/>
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
@@ -87,35 +87,8 @@
                     android:id="@+id/editText6"
                     android:hint="Confirm Password (Re-enter the password)"
                     android:textColorHint="@color/colorPrimary"
-                    android:textSize="15dp"/>
+                    android:textSize="15sp"/>
             </android.support.design.widget.TextInputLayout>
-
-            <RadioGroup
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/radioGroup"
-                android:layout_marginTop="50dp"
-                android:orientation="horizontal">
-
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="I have a ticket ID"
-                    android:id="@+id/radioButton"
-                    android:checked="false"
-                    android:layout_gravity="start"
-                    android:textSize="15sp"/>
-
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="I want to buy a ticket"
-                    android:id="@+id/radioButton2"
-                    android:checked="false"
-                    android:layout_gravity="end"
-                    android:textSize="15sp"/>
-
-            </RadioGroup>
 
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
@@ -129,7 +102,7 @@
                     android:hint="Ticket ID (#156796)"
                     android:enabled="true"
                     android:textColorHint="@color/colorPrimary"
-                    android:textSize="15dp"/>
+                    android:textSize="15sp"/>
 
             </android.support.design.widget.TextInputLayout>
 
@@ -140,10 +113,10 @@
                 android:id="@+id/button3"
                 android:layout_gravity="center"
                 android:layout_marginTop="30dp"
-                android:textSize="20dp"
+                android:textSize="20sp"
                 android:background="@color/colorPrimary"
                 android:textAllCaps="false"
-                android:padding="@dimen/activity_horizontal_margin"
+                android:padding="10sp"
                 android:textColor="@color/BK"/>
 
             <LinearLayout
@@ -157,7 +130,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Already have an account?"
-                    android:textSize="16dp"/>
+                    android:textSize="16sp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -166,7 +139,7 @@
                     android:text="Log in"
                     android:textColor="@color/Froly"
                     android:clickable="true"
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:id="@+id/red_login"/>
             </LinearLayout>
 

@@ -43,21 +43,21 @@ public class TimeTableFragment extends Fragment {
         title.setText("Talk Title");
         title.setTextColor(Color.MAGENTA);
         title.setPadding(5,5,5,5);
-        title.setTextSize(16);
+        title.setTextSize(15);
         tableRow.addView(title);
 
         TextView location=new TextView(getActivity());
         location.setText("Location");
         location.setTextColor(Color.MAGENTA);
         location.setPadding(5,5,5,5);
-        location.setTextSize(16);
+        location.setTextSize(15);
         tableRow.addView(location);
 
         TextView time=new TextView(getActivity());
         time.setText("Time");
         time.setTextColor(Color.MAGENTA);
         time.setPadding(5,5,5,5);
-        time.setTextSize(16);
+        time.setTextSize(15);
         tableRow.addView(time);
 
         tableRow.setPadding(5,5,5,5);
