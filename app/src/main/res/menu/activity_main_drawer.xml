@@ -14,10 +14,7 @@
             android:id="@+id/nav_time_table"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="Time Table" />
-        <item
-            android:id="@+id/nav_smart_map"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Smart Map" />
+
     </group>
 
     <item android:title="Communicate">
@@ -30,6 +27,10 @@
                 android:id="@+id/nav_about"
                 android:icon="@drawable/ic_menu_send"
                 android:title="About ZCSF" />
+            <item
+                android:id="@+id/credits"
+                android:icon="@drawable/ic_menu_manage"
+                android:title="Credits"/>
         </menu>
     </item>
 

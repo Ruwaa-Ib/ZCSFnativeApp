@@ -61,17 +61,20 @@ public class MainActivity extends AppCompatActivity
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
 
-        if (getFragmentManager().getBackStackEntryCount() > 0){
-            getFragmentManager().getBackStackEntryAt(0);
+        if (drawer.isDrawerOpen(GravityCompat.START)) {
+            drawer.closeDrawer(GravityCompat.START);
+        }
+
+        else if (getFragmentManager().getBackStackEntryCount() >= 1){
+            getFragmentManager().getBackStackEntryAt(1);
+            if (getFragmentManager().getBackStackEntryCount()==1){
+                finishAffinity();
+            }
         } else {
             super.onBackPressed();
         }
 
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
-        } else {
-            super.onBackPressed();
-        }
+
 // I think it's supposed to be else if however something is going wrong!
 
     }
@@ -91,9 +94,6 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
 
         if (id== R.id.action_sign_out){
             Intent intent=new Intent(MainActivity.this,SignIn.class);
@@ -126,6 +126,7 @@ public class MainActivity extends AppCompatActivity
             homeFragment.setArguments(bundle);
             manager.beginTransaction().replace(R.id.layout_for_fragment, homeFragment).commit();
 
+
         } else if (id == R.id.nav_time_table) {
 
 
@@ -135,12 +136,7 @@ public class MainActivity extends AppCompatActivity
             FragmentManager manager = getSupportFragmentManager();
             manager.beginTransaction().replace(R.id.layout_for_fragment, timeTableFragment).addToBackStack(null).commit();
 
-        } else if (id == R.id.nav_smart_map) {
-            SmartMapFragment smartMapFragment = new SmartMapFragment();
-            FragmentManager manager = getSupportFragmentManager();
-            manager.beginTransaction().replace(R.id.layout_for_fragment, smartMapFragment).addToBackStack(null).commit();
-
-        } else if (id == R.id.nav_contact) {
+        }  else if (id == R.id.nav_contact) {
             ContactUsFragment contactUsFragment = new ContactUsFragment();
             FragmentManager manager = getSupportFragmentManager();
             manager.beginTransaction().replace(R.id.layout_for_fragment, contactUsFragment).addToBackStack(null).commit();
@@ -150,6 +146,12 @@ public class MainActivity extends AppCompatActivity
             AboutZCSFfragment aboutZCSFfragment = new AboutZCSFfragment();
             FragmentManager manager = getSupportFragmentManager();
             manager.beginTransaction().replace(R.id.layout_for_fragment, aboutZCSFfragment).addToBackStack(null).commit();
+
+        } else if (id==R.id.credits){
+
+            CreditsFragment creditsFragment=new CreditsFragment();
+            FragmentManager manager=getSupportFragmentManager();
+            manager.beginTransaction().replace(R.id.layout_for_fragment,creditsFragment).addToBackStack(null).commit();
 
         }
 

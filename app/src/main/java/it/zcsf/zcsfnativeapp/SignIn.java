@@ -22,7 +22,7 @@ public class SignIn extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
-        final FirebaseClass auth=new FirebaseClass(SignIn.this);
+        //final FirebaseClass auth=new FirebaseClass(SignIn.this);
         final EditText id=(EditText)findViewById(R.id.editText);
         final EditText pass=(EditText)findViewById(R.id.editText2);
         Button login=(Button)findViewById(R.id.button);
@@ -71,7 +71,7 @@ public class SignIn extends Activity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_sign_out) {
             return true;
         }
 
