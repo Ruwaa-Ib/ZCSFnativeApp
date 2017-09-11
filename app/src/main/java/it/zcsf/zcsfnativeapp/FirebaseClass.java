@@ -2,8 +2,10 @@ package it.zcsf.zcsfnativeapp;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.TableLayout;
+import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -146,12 +148,94 @@ public class FirebaseClass {
 
     }
 
-    public void readData(){
+    public void readData(final TableLayout dataContainer){
     /* Used to read data in the App feed*/
+
+        FirebaseDatabase blogIn=FirebaseDatabase.getInstance();
+        DatabaseReference mBlog =blogIn.getReference();
+
+        mBlog.child("Posts").orderByKey().addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+                dataContainer.removeAllViews();
+
+                for (DataSnapshot postSnap:dataSnapshot.getChildren()){
+
+                    if (postSnap.child("Author").getValue()!=null&&postSnap.child("Content").getValue()!=null) {
+                        String author = postSnap.child("Author").getValue().toString();
+                        String content = postSnap.child("Content").getValue().toString();
+
+                        TableRow sRow1 = new TableRow(myContext);
+                        TableRow sRow2 = new TableRow(myContext);
+
+                        TextView name = new TextView(myContext);
+                        name.setText(author);
+                        name.setTextColor(Color.MAGENTA);
+                        name.setTextSize(21);
+
+                        TextView data = new TextView(myContext);
+                        data.setText(content+"\n");
+                        data.setTextColor(Color.BLACK);
+                        data.setSingleLine(false);
+                        data.setMaxWidth(800);
+                        data.setTextSize(17);
+
+
+                        sRow1.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT,
+                                TableRow.LayoutParams.WRAP_CONTENT));
+
+                        sRow2.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT,
+                                TableRow.LayoutParams.WRAP_CONTENT));
+
+                        name.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT));
+                        data.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT));
+
+                        sRow1.addView(name);
+                        sRow2.addView(data);
+
+                        dataContainer.addView(sRow1, new TableLayout.LayoutParams(TableLayout.LayoutParams.MATCH_PARENT,
+                                TableLayout.LayoutParams.WRAP_CONTENT));
+
+                        dataContainer.addView(sRow2, new TableLayout.LayoutParams(TableLayout.LayoutParams.MATCH_PARENT,
+                                TableLayout.LayoutParams.WRAP_CONTENT));
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
     }
 
-    public void postData(){
+    public void postData(final String author, final String text){
         /*Used to make a Post in the App feed*/
+        FirebaseDatabase blogOut=FirebaseDatabase.getInstance();
+        final DatabaseReference mBlog =blogOut.getReference();
+        final boolean[] e = {true};
+
+        mBlog.child("Posts").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                long postCount= dataSnapshot.getChildrenCount();
+
+
+                if (e[0]) {
+                    String postNum = "" + -1*(postCount + 1);
+
+                    mBlog.child("Posts").child(postNum).child("Author").setValue(author);
+                    mBlog.child("Posts").child(postNum).child("Content").setValue(text);
+                    e[0] =false;
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
 
     }
 

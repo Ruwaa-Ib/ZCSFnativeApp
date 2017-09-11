@@ -40,6 +40,8 @@ public class MainActivity extends AppCompatActivity
         }
 
         FragmentManager fragmentManager = getSupportFragmentManager();
+        bundle=getIntent().getExtras();
+        fragment.setArguments(bundle);
         fragmentManager.beginTransaction().replace(R.id.layout_for_fragment, fragment).commit();
 
         //------------------------------------------------------------------------------------//
@@ -120,6 +122,8 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_home) {
             HomeFragment homeFragment = new HomeFragment();
             FragmentManager manager = getSupportFragmentManager();
+            bundle=getIntent().getExtras();
+            homeFragment.setArguments(bundle);
             manager.beginTransaction().replace(R.id.layout_for_fragment, homeFragment).commit();
 
         } else if (id == R.id.nav_time_table) {
