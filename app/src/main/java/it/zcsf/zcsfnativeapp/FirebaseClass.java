@@ -271,20 +271,8 @@ public class FirebaseClass {
     }
 
     private String getTClass(String tid){
-        String TClass;
-        switch (tid.substring(0,2)){
-            case "12":
-                TClass="A1";
-                break;
-            case "15":
-                TClass="A2";
-                break;
-            default:
-                TClass="BB";
-        }
-
-
-        return TClass;
+     
+        return tid.substring(5,7);
     }
 
 
